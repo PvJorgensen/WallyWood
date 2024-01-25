@@ -3,7 +3,7 @@
 
 export const ContentWrapper = ({children, title}) => {
     return(
-        <div className={style.contentWrapper}>
+        <div>
             <h1>{title}</h1>
             <div>
             {children}

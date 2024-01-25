@@ -1,11 +1,15 @@
 .headerMain {
     background-color: white;
-    width: 90%;
+    width: 100%;
     margin: auto;
     display: flex;
     align-items: baseline;
     justify-content: space-between;
+    border-bottom: 1px solid black;
     h1 {
-        padding-left: 10px;
+        color: #d97852;
+        font-size: 4rem;
+        margin-bottom: 0;
+        font-weight: 900;
     }
 }

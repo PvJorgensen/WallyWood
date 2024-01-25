@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import './App.css'
+import './App.scss'
 
-import { Header } from './assets/Components/Partials/Header'
-import { ContentWrapper } from './assets/Components/ContentWrapper/ContentWrapper'
-import { AppRouter } from './assets/Components/AppRouter/AppRouter'
-import { Main } from './assets/Components/Partials/Main'
+import { Header } from './Components/Partials/Header'
+import { AppRouter } from './Components/AppRouter/AppRouter'
+import { Main } from './Components/Partials/Main'
 
 function App() {
   const [count, setCount] = useState(0)
