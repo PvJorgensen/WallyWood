@@ -1,6 +1,8 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
+import styles from '../Posters/PostersAll.module.scss'
+
 
 export const PosterList = () => {
   const [apiData, setApiData] = useState([])
@@ -14,9 +16,25 @@ export const PosterList = () => {
   }
   useEffect(() => {
     getData()
-  }, [setApiData])
+  }, [genre])
 
   return (
-    <div></div>
-  )
+    <div>
+        <div className={styles.PostersWrapper}>
+        {apiData && apiData.map(item => {
+            const array_genre = item.genres.map(a=> a.title)
+            return (
+                <div className={styles.indhold} key={item.id}>
+                  <Link to={`${item.slug}`}>
+                    <img src={item.image} alt={item.title} />
+                    </Link>
+                    <h4>{item.name}</h4>
+                    <p>Kr. {item.price}.00</p>
+                    <a className={styles.kurv} href="">Læg i kurv</a>
+                </div>
+            )
+        })}
+    </div>
+    </div>
+)
 }

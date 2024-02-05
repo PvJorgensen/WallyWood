@@ -8,7 +8,7 @@ export const NavMain = () => {
         <nav className={style.navMain}>
             <ul>
                 <li><NavLink to='/'>HOME</NavLink></li>
-                <li><NavLink to='/posters'>PLAKATER</NavLink></li>
+                <li><NavLink to='/posters/drama'>PLAKATER</NavLink></li>
                 <li><NavLink to='/Om'>OM OS</NavLink></li>
                 <li><NavLink to='/Kontakt'>KONTAKT</NavLink></li>
                 <li><NavLink to='/Login'>LOGIN</NavLink></li>

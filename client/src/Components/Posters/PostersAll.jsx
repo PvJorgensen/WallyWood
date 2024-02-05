@@ -1,12 +1,13 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import styles from './RandomPosters.module.scss'
+import styles from './PostersAll.module.scss'
+import { Link } from "react-router-dom"
 
-export const RandomPosters = () => {
+export const PostersAll = () => {
     const [apiData, setApiData] = useState([])
   
     const getData = async () => {
-      const url=`http://localhost:3000/posters?sort_key=random&limit=2&attributes=id,name,image,description`
+      const url=`http://localhost:3000/posters`
       const result = await axios.get(url)
       console.log(result.data);
       setApiData(result.data);
@@ -17,19 +18,15 @@ export const RandomPosters = () => {
 
     return (
         <div>
-            <h2>Sidste nyt...</h2>
-            <div className={styles.randomPosters}>
+            <div className={styles.PostersWrapper}>
             {apiData && apiData.map(item => {
                 const array_genre = item.genres.map(a=> a.title)
                 return (
                     <div className={styles.indhold} key={item.id}>
                         <img src={item.image} alt={item.title} />
-                        <article>
-                        <h3>{item.name}</h3>
-                        <div dangerouslySetInnerHTML={{__html: item.description}}/>
-                        <p>Genre: {array_genre.join(', ')}</p>
-                        <a href="#">Læs mere</a>
-                        </article>
+                        <h4>{item.name}</h4>
+                        <p>Kr. {item.price}.00</p>
+                        <a href="">Læg i kurv</a>
                     </div>
                 )
             })}

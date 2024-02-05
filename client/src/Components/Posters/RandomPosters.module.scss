@@ -1,8 +1,47 @@
 .randomPosters{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 3rem;
     img {
+        margin-left: 0;
         max-width: 200px;
         width: 100%;
+        margin-right: 0;
+        margin-top: 0;
+    }
+}
+.indhold {
+    display: grid;
+    grid-template-columns: 1fr 2.3fr;
+    gap: 1rem;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+    h3{
+        margin: 0;
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+        color: #524641;
+    }
+    p {
+        margin-top: 0;
+    }
+    a {
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+        color: black;
+        border: 1px solid black;
+        border-radius: 3px;
+        background-color: #d1b3a7;
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        width: 70px;
     }
 }
